@@ -69,8 +69,19 @@
 // }
 // console.log(n);
 
-let pass = prompt("Nhập Mk");
-if(!(pass.length >= 8 && pass.search('@') >= 0)){
-  pass = prompt("Nhập lại mk");
+// let pass = prompt("Nhập Mk");
+// if(!(pass.length >= 8 && pass.search('@') >= 0)){
+//   pass = prompt("Nhập lại mk");
+// }
+// console.log(pass);
+
+let n = parseInt(prompt("Stt fibonacci: "));
+let f1 = 1, f2 = 1;
+let count = 2;
+for (let i = 1; i < n / 2; i++) {
+  f1 = f1 + f2;
+  count++;
+  f2 = f2 + f1;
+  count++;
 }
-console.log(pass);
+console.log(`f${count-1}: ${f1}, f${count}: ${f2}`);
