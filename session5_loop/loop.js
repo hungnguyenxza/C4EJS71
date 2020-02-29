@@ -75,13 +75,28 @@
 // }
 // console.log(pass);
 
-let n = parseInt(prompt("Stt fibonacci: "));
-let f1 = 1, f2 = 1;
-let count = 2;
-for (let i = 1; i < n / 2; i++) {
-  f1 = f1 + f2;
-  count++;
-  f2 = f2 + f1;
-  count++;
+// let n = parseInt(prompt("Stt fibonacci: "));
+// let f1 = 1, f2 = 1;
+// let count = 2;
+// for (let i = 1; i < n / 2; i++) {
+//   f1 = f1 + f2;
+//   count++;
+//   f2 = f2 + f1;
+//   count++;
+// }
+// console.log(`f${count-1}: ${f1}, f${count}: ${f2}`);
+
+let a = 10;
+let b = 20;
+let s = '';
+console.log('======= HTG ======');
+for (let i = 0; i < b; i++) {
+  s += "*";
+  console.log(s);
 }
-console.log(`f${count-1}: ${f1}, f${count}: ${f2}`);
+let result = '';
+for (let i = 0; i < a; i++) {
+  result += s + '\n';
+}
+console.log('===== HCN =====');
+console.log(result);
