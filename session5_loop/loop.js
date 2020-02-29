@@ -86,17 +86,45 @@
 // }
 // console.log(`f${count-1}: ${f1}, f${count}: ${f2}`);
 
-let a = 10;
-let b = 20;
-let s = '';
-console.log('======= HTG ======');
-for (let i = 0; i < b; i++) {
-  s += "*";
-  console.log(s);
+// let a = 10;
+// let b = 20;
+// let s = '';
+// console.log('======= HTG ======');
+// for (let i = 0; i < b; i++) {
+//   s += "*";
+//   console.log(s);
+// }
+// let result = '';
+// for (let i = 0; i < a; i++) {
+//   result += s + '\n';
+// }
+// console.log('===== HCN =====');
+// console.log(result);
+
+// // Hợp số
+let n = parseInt(prompt("Nhập số (ktra hợp số - số nguyên tố):"));
+let soLuongUocSo = 0;
+for (let i = 1; i <= n; i++) {
+  if (n % i === 0) {
+    console.log(i);
+    soLuongUocSo++;
+    if (soLuongUocSo > 2) {
+      // break;
+    }
+  }
 }
-let result = '';
-for (let i = 0; i < a; i++) {
-  result += s + '\n';
+if (soLuongUocSo > 2) {
+  console.log("Hợp số");
+} else {
+  console.log("Số nguyên tố");
 }
-console.log('===== HCN =====');
-console.log(result);
+
+// let n = 10;
+// for (let i = 0; i <= n; i++) {
+//   if(i % 2 === 1){
+//     break;
+//   }
+
+//   console.log(i);
+// }
+
