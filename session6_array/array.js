@@ -36,52 +36,69 @@
 // console.log(`a = ${a}, b = ${b}`);
 // console.log(arr);
 
-let arr = [];
-let length = 5;
-for (let i = 0; i < length; i++) {
-  let n = parseInt(prompt("Nhập 1 số"));
-  arr.push(n);
-  // arr[i] = n; // Không nên
-}
-console.log("STT: Giá trị");
-for (let i = 0; i < arr.length; i++) {
-  console.log(`${i + 1}: ${arr[i]}`);
-}
+// let arr = [];
+// let length = 5;
+// for (let i = 0; i < length; i++) {
+//   let n = parseInt(prompt("Nhập 1 số"));
+//   arr.push(n);
+//   // arr[i] = n; // Không nên
+// }
+// console.log("STT: Giá trị");
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(`${i + 1}: ${arr[i]}`);
+// }
 
-console.log("===== Tổng =====");
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-console.log(`Tổng: ${sum}`);
-console.log(`Trung bình: ${sum / arr.length}`);
+// console.log("===== Tổng =====");
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += arr[i];
+// }
+// console.log(`Tổng: ${sum}`);
+// console.log(`Trung bình: ${sum / arr.length}`);
 
-let isExist = false;
+// let isExist = false;
+let count = 0;
 let N = Number(prompt("Nhập 1 số"));
 for (let i = 0; i < arr.length; i++) {
   const element = arr[i];
-  if(element === N){
-    isExist = true;
-    break;
+  if(element.toUpperCase() === N.toUpperCase()){
+    // isExist = true;
+    count++;
+    // break;
   }
 }
-if (isExist) {
-  console.log("Có tồn tại");
+if (count > 0) {
+  console.log("Có tồn tại, và có "+ count + " số trùng");
 } else {
   console.log("Không tồn tại");
 }
 
 
-let stt = parseInt(prompt("Vị trí muốn sửa"));
-while(stt < 1 || stt > arr.length){
-  stt = parseInt(prompt("Nhập đúng vị trí: "));
-}
+// let stt = parseInt(prompt("Vị trí muốn sửa"));
+// while(stt < 1 || stt > arr.length){
+//   stt = parseInt(prompt("Nhập đúng vị trí: "));
+// }
 
-arr[stt - 1] = Number(prompt("Nhập giá trị mới:"));
+// arr[stt - 1] = Number(prompt("Nhập giá trị mới:"));
 
 // Sắp xếp rồi in
 // Hàm sort
+// arr.sort(); // tăng dần
+// arr.reverse(); // đảo ngược thứ tự => giảm dần
 // Thuật toán
+
+let arr = [6, 7, 3, 2, 9];
+for (let i = 0; i < arr.length - 1; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    if(arr[i] < arr[j]){
+      // đổi chỗ
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+  }
+}
+console.log(arr);
 
 
 
