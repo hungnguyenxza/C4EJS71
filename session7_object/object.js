@@ -23,53 +23,46 @@
 // 2. cho người dùng nhập thêm năm sản xuất của đt này
 // 3. cho ngdung sửa 1 value của đt này
 // 4. nhập 1 key, xóa thông tin này trong đt
-let phone = {
-  'name': 'Galaxy Note',
-  price: 10e6,
-  'brand': 'samsung',
-}
-for (const key in phone) {
-  const element = phone[key];
-  console.log(key + ": " + element);
-}
+// let phone = {
+//   'name': 'Galaxy Note',
+//   price: 10e6,
+//   'brand': 'samsung',
+// }
+// for (const key in phone) {
+//   const element = phone[key];
+//   console.log(key + ": " + element);
+// }
 
-let releaseDate = parseInt(prompt("Nhập năm sản xuất"));
-phone.releaseYear = releaseDate;
-phone['releaseYear'] = releaseDate;
+// let releaseDate = parseInt(prompt("Nhập năm sản xuất"));
+// phone.releaseYear = releaseDate;
+// phone['releaseYear'] = releaseDate;
 
-console.log("\n========= Thêm thành công ========\n");
-for (const key in phone) {
-  const element = phone[key];
-  console.log(key + ": " + element);
-}
+// console.log("\n========= Thêm thành công ========\n");
+// for (const key in phone) {
+//   const element = phone[key];
+//   console.log(key + ": " + element);
+// }
 
-let editKey = prompt("Bạn muốn sửa gì?"); //name
-while (!phone.hasOwnProperty(editKey)) {
-  editKey = prompt("Bạn muốn sửa gì???");
-}
-phone[editKey] = prompt("Giá trị mới");
-console.log("\n========= Sửa thành công ========\n");
-for (const key in phone) {
-  const element = phone[key];
-  console.log(key + ": " + element);
-}
-let removeKey = prompt("Bạn muốn xóa gì?"); //name
-while (!phone.hasOwnProperty(removeKey)) {
-  removeKey = prompt("Bạn muốn xóa gì???");
-}
-delete phone[removeKey];
-console.log("\n========= Xóa thành công ========\n");
-for (const key in phone) {
-  const element = phone[key];
-  console.log(key + ": " + element);
-}
-
-
-
-
-
-
-
+// let editKey = prompt("Bạn muốn sửa gì?"); //name
+// while (!phone.hasOwnProperty(editKey)) {
+//   editKey = prompt("Bạn muốn sửa gì???");
+// }
+// phone[editKey] = prompt("Giá trị mới");
+// console.log("\n========= Sửa thành công ========\n");
+// for (const key in phone) {
+//   const element = phone[key];
+//   console.log(key + ": " + element);
+// }
+// let removeKey = prompt("Bạn muốn xóa gì?"); //name
+// while (!phone.hasOwnProperty(removeKey)) {
+//   removeKey = prompt("Bạn muốn xóa gì???");
+// }
+// delete phone[removeKey];
+// console.log("\n========= Xóa thành công ========\n");
+// for (const key in phone) {
+//   const element = phone[key];
+//   console.log(key + ": " + element);
+// }
 
 // II. Khai báo 1 mảng chứa thông tin 3 đt, mỗi đt gồm:
 // tên, giá, hãng sx
@@ -81,3 +74,50 @@ for (const key in phone) {
 // 6. Nhập 2 số, tìm các đt có giá nằm giữa 2 số đó
 // 7. Nhập 1 hãng SX, tìm các đt thuộc hãng sx đó
 // 8. sắp xếp DS đt theo tên, theo giá, (tăng, giảm dần)
+
+let listPhone = [
+  {
+    name: 'Galaxy Note',
+    price: 10e6,
+    brand: 'Samsung'
+  },
+  {
+    name: 'Xperia 1',
+    price: 11e6,
+    brand: 'Sony'
+  },
+  {
+    name: 'iPhone 11',
+    price: 12e6,
+    brand: 'Apple'
+  },
+];
+for (let i = 0; i < listPhone.length; i++) {
+  const phone = listPhone[i];
+  console.log(i + 1);
+  for (const key in phone) {
+    const value = phone[key];
+    console.log("\t" + key + ": " + value);
+  }
+  console.log('\t --- \t --- ');
+}
+
+let newPhoneName = prompt("Tên đt mới:");
+let newPhonePrice = Number(prompt("Giá đt mới:"));
+let newPhoneBrand = prompt("Hãng đt mới:");
+let newPhone = {
+  name: newPhoneName,
+  price: newPhonePrice,
+  brand: newPhoneBrand,
+};
+listPhone.push(newPhone);
+console.log("======= Thêm thành công ======");
+for (let i = 0; i < listPhone.length; i++) {
+  const phone = listPhone[i];
+  console.log(i + 1);
+  for (const key in phone) {
+    const value = phone[key];
+    console.log("\t" + key + ": " + value);
+  }
+  console.log('\t --- \t --- ');
+}
