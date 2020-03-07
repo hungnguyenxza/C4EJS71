@@ -92,6 +92,137 @@ let listPhone = [
     brand: 'Apple'
   },
 ];
+// In ra
+for (let i = 0; i < listPhone.length; i++) { // mảng
+  const phone = listPhone[i]; // object
+  console.log(i + 1);
+  for (const key in phone) {
+    const value = phone[key];
+    console.log("\t" + key + ": " + value);
+  }
+  console.log('\t --- \t --- ');
+}
+
+// thêm mới
+// let newPhoneName = prompt("Tên đt mới:");
+// let newPhonePrice = Number(prompt("Giá đt mới:"));
+// let newPhoneBrand = prompt("Hãng đt mới:");
+// let newPhone = {
+//   name: newPhoneName,
+//   price: newPhonePrice,
+//   brand: newPhoneBrand,
+// };
+// listPhone.push(newPhone);
+// console.log("======= Thêm thành công ======");
+// // in ra
+// for (let i = 0; i < listPhone.length; i++) {
+//   const phone = listPhone[i];
+//   console.log(i + 1);
+//   for (const key in phone) {
+//     const value = phone[key];
+//     console.log("\t" + key + ": " + value);
+//   }
+//   console.log('\t --- \t --- ');
+// }
+
+// sửa
+// let sttSua = parseInt(prompt("Nhập vị trí muốn sửa:"));
+// if (sttSua >= 1 && sttSua <= listPhone.length) {
+//   // Nhập đúng
+//   let phoneEdit = listPhone[sttSua - 1];
+//   let keyEdit = prompt("Nhập thông tin cần sửa: (name, price, brand)");
+//   if (phoneEdit.hasOwnProperty(keyEdit)) {
+//     // Nhập đúng
+//     phoneEdit[keyEdit] = prompt(`Nhập ${keyEdit} mới:`);
+//     console.log("======= Sửa thành công ======");
+
+//     // in ra
+//     for (let i = 0; i < listPhone.length; i++) {
+//       const phone = listPhone[i];
+//       console.log(i + 1);
+//       for (const key in phone) {
+//         const value = phone[key];
+//         console.log("\t" + key + ": " + value);
+//       }
+//       console.log('\t --- \t --- ');
+//     }
+//   } else {
+//     // Nhập sai
+//     alert("Sai key cần sửa");
+//   }
+// } else {
+//   // Nhập sai
+//   alert("Nhập sai stt");
+// }
+// xóa
+// let sttXoa = parseInt(prompt("Vị trí cần xóa:"));
+// if (sttXoa >= 1 && sttXoa <= listPhone.length) {
+//   // Nhập đúng:
+//   listPhone.splice(sttXoa - 1, 1);
+//   console.log("======= Xóa thành công ======");
+
+//   // in ra
+//   for (let i = 0; i < listPhone.length; i++) {
+//     const phone = listPhone[i];
+//     console.log(i + 1);
+//     for (const key in phone) {
+//       const value = phone[key];
+//       console.log("\t" + key + ": " + value);
+//     }
+//     console.log('\t --- \t --- ');
+//   }
+// } else {
+//   alert("Nhập sai");
+// }
+
+// Tìm theo tên đt
+
+// let searchPhoneName = prompt("Tên đt cần tìm");
+// let minPrice = Number(prompt("Nhập price min:"));
+// let maxPrice = Number(prompt("Nhập price max:"));
+// console.log("======= Tìm đt ======");
+// let resultSearch = [];
+
+// for (const phone of listPhone) { // Vòng lặp tìm kiếm
+//   // if (phone.name.toLowerCase().includes(searchPhoneName.toLowerCase())) {
+//   //   resultSearch.push(phone);
+//   // }
+//   if (phone.price >= minPrice && phone.price <= maxPrice) {
+//     resultSearch.push(phone);
+//   }
+// }
+
+// // console.log(`=== Kết quả tìm kiếm: ${searchPhoneName}`);
+// console.log(`=== Kết quả tìm kiếm: ${minPrice} - ${maxPrice}`);
+// if (resultSearch.length > 0) {
+//   // in ra
+//   for (let i = 0; i < resultSearch.length; i++) {
+//     const phone = resultSearch[i];
+//     console.log(i + 1);
+//     for (const key in phone) {
+//       const value = phone[key];
+//       console.log("\t" + key + ": " + value);
+//     }
+//     console.log('\t --- \t --- ');
+//   }
+// }
+// else {
+//   console.log("Không có kết quả thỏa mãn");
+// }
+
+// Sắp xếp
+for (let i = 0; i < listPhone.length - 1; i++) {
+  for (let j = i + 1; j < listPhone.length; j++) {
+    if (listPhone[i].brand.toLowerCase().localeCompare(listPhone[j].brand.toLowerCase()) > 0) {
+      let temp = listPhone[i];
+      listPhone[i] = listPhone[j];
+      listPhone[j] = temp;
+    }
+  }
+}
+// in ra
+console.log("====== Sắp xếp ======");
+
 for (let i = 0; i < listPhone.length; i++) {
   const phone = listPhone[i];
   console.log(i + 1);
@@ -102,22 +233,10 @@ for (let i = 0; i < listPhone.length; i++) {
   console.log('\t --- \t --- ');
 }
 
-let newPhoneName = prompt("Tên đt mới:");
-let newPhonePrice = Number(prompt("Giá đt mới:"));
-let newPhoneBrand = prompt("Hãng đt mới:");
-let newPhone = {
-  name: newPhoneName,
-  price: newPhonePrice,
-  brand: newPhoneBrand,
-};
-listPhone.push(newPhone);
-console.log("======= Thêm thành công ======");
-for (let i = 0; i < listPhone.length; i++) {
-  const phone = listPhone[i];
-  console.log(i + 1);
-  for (const key in phone) {
-    const value = phone[key];
-    console.log("\t" + key + ": " + value);
-  }
-  console.log('\t --- \t --- ');
-}
+// Kiến thức mới: 
+// 1. Function. // function không tham số, có tham số, có giá trị trả về
+// 2. Array methods:
+// - Array.filter()
+// - array.find(), array.findIndex();
+// - array.indexOf(), lastIndexOf();
+// - array.every(), array.some();
