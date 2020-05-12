@@ -94,29 +94,9 @@ let listPhone = [
 ];
 
 
-inDanhSachDT();
+inDanhSachDT(listPhone);
+themMoi();
 
-// thêm mới
-let newPhoneName = prompt("Tên đt mới:");
-let newPhonePrice = Number(prompt("Giá đt mới:"));
-let newPhoneBrand = prompt("Hãng đt mới:");
-let newPhone = {
-  name: newPhoneName,
-  price: newPhonePrice,
-  brand: newPhoneBrand,
-};
-listPhone.push(newPhone);
-console.log("======= Thêm thành công ======");
-// in ra
-for (let i = 0; i < listPhone.length; i++) {
-  const phone = listPhone[i];
-  console.log(i + 1);
-  for (const key in phone) {
-    const value = phone[key];
-    console.log("\t" + key + ": " + value);
-  }
-  console.log('\t --- \t --- ');
-}
 
 // sửa
 let sttSua = parseInt(prompt("Nhập vị trí muốn sửa:"));
@@ -129,16 +109,7 @@ if (sttSua >= 1 && sttSua <= listPhone.length) {
     phoneEdit[keyEdit] = prompt(`Nhập ${keyEdit} mới:`);
     console.log("======= Sửa thành công ======");
 
-    // in ra
-    for (let i = 0; i < listPhone.length; i++) {
-      const phone = listPhone[i];
-      console.log(i + 1);
-      for (const key in phone) {
-        const value = phone[key];
-        console.log("\t" + key + ": " + value);
-      }
-      console.log('\t --- \t --- ');
-    }
+    inDanhSachDT(listPhone);
   } else {
     // Nhập sai
     alert("Sai key cần sửa");
@@ -154,16 +125,7 @@ if (sttXoa >= 1 && sttXoa <= listPhone.length) {
   listPhone.splice(sttXoa - 1, 1);
   console.log("======= Xóa thành công ======");
 
-  // in ra
-  for (let i = 0; i < listPhone.length; i++) {
-    const phone = listPhone[i];
-    console.log(i + 1);
-    for (const key in phone) {
-      const value = phone[key];
-      console.log("\t" + key + ": " + value);
-    }
-    console.log('\t --- \t --- ');
-  }
+  inDanhSachDT(listPhone);
 } else {
   alert("Nhập sai");
 }
@@ -188,16 +150,7 @@ for (const phone of listPhone) { // Vòng lặp tìm kiếm
 // console.log(`=== Kết quả tìm kiếm: ${searchPhoneName}`);
 console.log(`=== Kết quả tìm kiếm: ${minPrice} - ${maxPrice}`);
 if (resultSearch.length > 0) {
-  // in ra
-  for (let i = 0; i < resultSearch.length; i++) {
-    const phone = resultSearch[i];
-    console.log(i + 1);
-    for (const key in phone) {
-      const value = phone[key];
-      console.log("\t" + key + ": " + value);
-    }
-    console.log('\t --- \t --- ');
-  }
+  inDanhSachDT(resultSearch);
 }
 else {
   console.log("Không có kết quả thỏa mãn");
@@ -235,9 +188,9 @@ for (let i = 0; i < listPhone.length; i++) {
 // - array.every(), array.some();
 
 
-function inDanhSachDT(){
-  for (let i = 0; i < listPhone.length; i++) {
-    const phone = listPhone[i];
+function inDanhSachDT(arrDT){
+  for (let i = 0; i < arrDT.length; i++) {
+    const phone = arrDT[i];
     console.log(i + 1);
     for (const key in phone) {
       const value = phone[key];
@@ -245,4 +198,18 @@ function inDanhSachDT(){
     }
     console.log('\t --- \t --- ');
   }
+}
+
+function themMoi(){
+  let newPhoneName = prompt("Tên đt mới:");
+  let newPhonePrice = Number(prompt("Giá đt mới:"));
+  let newPhoneBrand = prompt("Hãng đt mới:");
+  let newPhone = {
+    name: newPhoneName,
+    price: newPhonePrice,
+    brand: newPhoneBrand,
+  };
+  listPhone.push(newPhone);
+  console.log("======= Thêm thành công ======");
+  inDanhSachDT(listPhone);
 }

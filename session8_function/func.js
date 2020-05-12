@@ -56,7 +56,7 @@ function tinhTong4(a) {
 // let sum = tinhTong4([1, 2, 3, 4, 5]);
 // console.log(sum);
 
-function xinChao2(){
+function xinChao2() {
     console.log("Xin chào");
     //return;
 }
@@ -64,22 +64,22 @@ function xinChao2(){
 // let n1 = xinChao2();
 // console.log(n1); //
 
-function xinChao3(){
+function xinChao3() {
 
     return;
-    
+
     console.log("Hello world");
 }
 
-xinChao3();
+// xinChao3();
 
 
-function printNumber(a, b){
-    if(b === 0){
+function printNumber(a, b) {
+    if (b === 0) {
         return;
     }
 
-    if(b < 0){
+    if (b < 0) {
         return;
     }
 
@@ -88,15 +88,34 @@ function printNumber(a, b){
     let i = 0;
     while (true) {
         console.log(i++);
-        if(i > 3){
+        if (i > 3) {
             return;
         }
     }
 }
 
-console.log(printNumber());
+// console.log(printNumber());
 
 
+
+function tinhGiaiThua(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * tinhGiaiThua(n - 1);
+}
+
+// let gT = tinhGiaiThua(6);
+// console.log(gT);
+
+// Fibonacci
+function fibonacci(n){
+    if(n === 1 || n === 2){
+        return 1;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+console.log(fibonacci(20));
 
 
 
