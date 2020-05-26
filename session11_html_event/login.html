@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Login page</h1>
+
+    <form action="">
+        <div>
+            Username: <input required onkeyup="submit(event)" id="username" type="text">
+        </div>
+        <div>
+            Password: <input onkeyup="submit(event)" id="password" type="password">
+        </div>
+        <div>
+            Remember <input type="checkbox">
+        </div>
+        <div>
+            <button onclick="login()">Login</button>
+        </div>
+    </form>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

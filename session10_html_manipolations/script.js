@@ -83,6 +83,7 @@ let listFoodAndImgs = [
 // }
 
 let tbody = document.getElementById('foods');
+tbody.innerHTML = '';
 for (let i = 0; i < listFoodAndImgs.length; i++) {
     const food = listFoodAndImgs[i];
     
